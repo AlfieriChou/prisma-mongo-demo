@@ -15,7 +15,7 @@ docker run --name docker-mongo -e ALLOW_EMPTY_PASSWORD=yes -p 27017:27017 -d bit
 * docker-compose
 
 ```bash
-docker-compose up
+docker-compose exec mongo mongo --eval "rs.initiate({_id: 'rs0', members: [{_id: 0, host: 'mongo:27017'}]});"
 ```
 
 ## usage
